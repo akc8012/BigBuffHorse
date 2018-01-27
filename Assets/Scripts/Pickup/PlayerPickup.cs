@@ -1,32 +1,37 @@
 ﻿using UnityEngine;
 
-public class PlayerPickup : MonoBehaviour {
-
+public class PlayerPickup : MonoBehaviour
+{
 	Interactable heldItem;
 	Interactable seenItem;
-
 	PlayerBallController controller;
 
 	void Awake()
 	{
-		controller = GetComponent<PlayerBallController>();
+		controller = GetComponentInChildren<PlayerBallController>();
 	}
 
-	void Update() {
+	void Update()
+	{
 		if (Input.GetButtonDown("Action" + controller.GetPlayerNdx))
 		{
-			if (seenItem)
+			Debug.Log("Pressing pickup button!");
+			if (seenItem != null)
 			{
+				Debug.Log("Picking up " + seenItem.gameObject.name + "!");
 				seenItem.OnPickup(transform);
 			}
 		}
 	}
 
-	public void OnPickupStay(Collider pickup) {
+	public void OnPickupStay(Collider pickup)
+	{
 		
 	}
 
-	public void OnPickupEnter(Collider pickup) {
+	public void OnPickupEnter(Collider pickup)
+	{
+		Debug.Log("I see " + pickup.gameObject.name + "!");
 		seenItem = pickup.GetComponent<Interactable>();
 	}
 }
