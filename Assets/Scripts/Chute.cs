@@ -30,8 +30,7 @@ public class Chute : MonoBehaviour
 	public void SpawnObject()
 	{
 		int randNum = Random.Range(0, spawnables.Length);
-
-		GameObject clone = Instantiate(spawnables[randNum], spawnLoc.position, Quaternion.identity, boxContainer);
+		Instantiate(spawnables[randNum], spawnLoc.position, Quaternion.identity, boxContainer);
 	}
 
 	void SetNextSpawnTime()

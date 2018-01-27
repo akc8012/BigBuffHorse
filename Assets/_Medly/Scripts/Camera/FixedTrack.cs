@@ -11,14 +11,20 @@ public class FixedTrack : abstractTargetTrack {
 
     [Header("Fixed Tracking")]
     [SerializeField] protected Vector3 offset = new Vector3(0, 3, -5);
+	[SerializeField] protected bool useSceneOffset;
 
     [SerializeField] protected bool smoothTracking = false;           // Toggle whether we are smoothing tracking.
     [SerializeField] protected float SmoothValue;                     // A scale amount of lag to give the camera so that it appears smooth when it moves.
 
     protected void Start(){
-        // Make sure we always start in the same position relative to the target
-        if (target)
-            transform.position = new Vector3(target.position.x + offset.x, target.position.y + offset.y, target.position.z + offset.z);
+		// Make sure we always start in the same position relative to the target
+		if (target)
+		{
+			if (useSceneOffset)
+				offset = transform.position - target.position;
+			else
+				transform.position = new Vector3(target.position.x + offset.x, target.position.y + offset.y, target.position.z + offset.z);			
+		}
     }
 
     protected override void TrackTarget() {
