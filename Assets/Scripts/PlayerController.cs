@@ -26,8 +26,6 @@ public class PlayerController : MonoBehaviour
 				transform.rotation = Quaternion.LookRotation(targetRotation);
 		}
 
-
-
 		characterController.Move(transform.forward * input.magnitude * speed);
 	}
 }
