@@ -21,7 +21,7 @@ public class BasicMenuUI : MonoBehaviour
 
 	void RestartGameClicked()
 	{
-		GameStateManager.instance.StartGame();
+		GameStateManager.instance.RestartGame();
 	}
 
 	void GoToTitleClicked()

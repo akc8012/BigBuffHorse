@@ -24,10 +24,18 @@ public class GameStateManager : MonoBehaviour
 			Destroy(gameObject);
 
 		DontDestroyOnLoad(gameObject);
+		SetPlayingWhenStartingInGame();
 	}
 
-	public void StartGame()
+	void SetPlayingWhenStartingInGame()
 	{
+		if (SceneManager.GetActiveScene().buildIndex != 0)
+			gameState = GameState.Playing;
+	}
+
+	public void RestartGame()
+	{
+		ScoreManager.instance.ResetScore();
 		SceneManager.LoadScene(1);
 		gameState = GameState.Playing;
 	}
@@ -43,5 +51,21 @@ public class GameStateManager : MonoBehaviour
 
 		Instantiate(gameEndCanvas);
 		gameState = GameState.Waiting;
+	}
+
+	public void RoundEnd()
+	{
+		print(ScoreManager.instance.GetCurrentWinner());
+		StartCoroutine(WaitForEndRound(3));
+
+		gameState = GameState.Waiting;
+	}
+
+	IEnumerator WaitForEndRound(float t)
+	{
+		yield return new WaitForSeconds(t);
+		gameState = GameState.Playing;
+
+		SceneManager.LoadScene(1);
 	}
 }
