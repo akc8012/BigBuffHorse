@@ -34,7 +34,7 @@ public abstract class Interactable : MonoBehaviour
 		{
 			float distanceToMove = Vector3.Distance(transform.position, anchorPoint.position) - anchorDistance;
 
-			Quaternion fromToRot = 
+			//Quaternion fromToRot = 
 		}
 	}
 }
