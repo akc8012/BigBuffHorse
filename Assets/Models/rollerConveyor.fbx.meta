@@ -1,0 +1,175 @@
+fileFormatVersion: 2
+guid: df2149b2cdd933345a2fab99f1e085b9
+timeCreated: 1517079648
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: rollerConveyor_Base
+    100004: rollerConveyor_End_01
+    100006: rollerConveyor_End_02
+    100008: rollerConveyor_PowerBase
+    100010: rollerConveyor_PowerBrick
+    100012: rollerConveyor_PowerButton
+    100014: rollerConveyor_PowerSupply
+    100016: rollerConveyor_Screw_01
+    100018: rollerConveyor_Screw_02
+    100020: rollerConveyor_Screw_03
+    100022: rollerConveyor_Screw_04
+    100024: rollerConveyor_Screw_05
+    100026: rollerConveyor_Screw_06
+    100028: rollerConveyor_smallScrew_01
+    100030: rollerConveyor_smallScrew_02
+    100032: rollerConveyor_smallScrew_03
+    100034: rollerConveyor_smallScrew_04
+    100036: rollerConveyor_smallScrew_05
+    100038: rollerConveyor_smallScrew_06
+    400000: //RootNode
+    400002: rollerConveyor_Base
+    400004: rollerConveyor_End_01
+    400006: rollerConveyor_End_02
+    400008: rollerConveyor_PowerBase
+    400010: rollerConveyor_PowerBrick
+    400012: rollerConveyor_PowerButton
+    400014: rollerConveyor_PowerSupply
+    400016: rollerConveyor_Screw_01
+    400018: rollerConveyor_Screw_02
+    400020: rollerConveyor_Screw_03
+    400022: rollerConveyor_Screw_04
+    400024: rollerConveyor_Screw_05
+    400026: rollerConveyor_Screw_06
+    400028: rollerConveyor_smallScrew_01
+    400030: rollerConveyor_smallScrew_02
+    400032: rollerConveyor_smallScrew_03
+    400034: rollerConveyor_smallScrew_04
+    400036: rollerConveyor_smallScrew_05
+    400038: rollerConveyor_smallScrew_06
+    2300000: rollerConveyor_Base
+    2300002: rollerConveyor_End_01
+    2300004: rollerConveyor_End_02
+    2300006: rollerConveyor_PowerBase
+    2300008: rollerConveyor_PowerBrick
+    2300010: rollerConveyor_PowerButton
+    2300012: rollerConveyor_PowerSupply
+    2300014: rollerConveyor_Screw_01
+    2300016: rollerConveyor_Screw_02
+    2300018: rollerConveyor_Screw_03
+    2300020: rollerConveyor_Screw_04
+    2300022: rollerConveyor_Screw_05
+    2300024: rollerConveyor_Screw_06
+    2300026: rollerConveyor_smallScrew_01
+    2300028: rollerConveyor_smallScrew_02
+    2300030: rollerConveyor_smallScrew_03
+    2300032: rollerConveyor_smallScrew_04
+    2300034: rollerConveyor_smallScrew_05
+    2300036: rollerConveyor_smallScrew_06
+    3300000: rollerConveyor_Base
+    3300002: rollerConveyor_End_01
+    3300004: rollerConveyor_End_02
+    3300006: rollerConveyor_PowerBase
+    3300008: rollerConveyor_PowerBrick
+    3300010: rollerConveyor_PowerButton
+    3300012: rollerConveyor_PowerSupply
+    3300014: rollerConveyor_Screw_01
+    3300016: rollerConveyor_Screw_02
+    3300018: rollerConveyor_Screw_03
+    3300020: rollerConveyor_Screw_04
+    3300022: rollerConveyor_Screw_05
+    3300024: rollerConveyor_Screw_06
+    3300026: rollerConveyor_smallScrew_01
+    3300028: rollerConveyor_smallScrew_02
+    3300030: rollerConveyor_smallScrew_03
+    3300032: rollerConveyor_smallScrew_04
+    3300034: rollerConveyor_smallScrew_05
+    3300036: rollerConveyor_smallScrew_06
+    4300000: rollerConveyor_PowerButton
+    4300002: rollerConveyor_smallScrew_02
+    4300004: rollerConveyor_smallScrew_06
+    4300006: rollerConveyor_Screw_05
+    4300008: rollerConveyor_Screw_06
+    4300010: rollerConveyor_PowerBase
+    4300012: rollerConveyor_Screw_03
+    4300014: rollerConveyor_PowerBrick
+    4300016: rollerConveyor_Screw_02
+    4300018: rollerConveyor_PowerSupply
+    4300020: rollerConveyor_Screw_01
+    4300022: rollerConveyor_Screw_04
+    4300024: rollerConveyor_smallScrew_05
+    4300026: rollerConveyor_Base
+    4300028: rollerConveyor_smallScrew_04
+    4300030: rollerConveyor_smallScrew_03
+    4300032: rollerConveyor_End_02
+    4300034: rollerConveyor_smallScrew_01
+    4300036: rollerConveyor_End_01
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
