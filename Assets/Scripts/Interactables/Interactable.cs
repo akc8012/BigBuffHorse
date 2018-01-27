@@ -9,9 +9,32 @@ public enum InteractableSize
 
 public abstract class Interactable : MonoBehaviour
 {
-	[SerializeField] InteractableSize size;
+	[SerializeField] protected InteractableSize size;
+	[SerializeField] protected float anchorDistance;
+
+	protected Transform anchorPoint;
+	protected bool held;
 
 	// Function to be triggered when player picks up this object.
 	// I.E., bomb starts fuse.
-	public abstract void OnPickup();
+	public virtual void OnPickup(Transform player)
+	{
+		SetAnchorPoint(player);
+		held = true;
+	}
+
+	public void SetAnchorPoint(Transform anchorPoint)
+	{
+		this.anchorPoint = anchorPoint;
+	}
+
+	protected void LateUpdate()
+	{
+		if (held)
+		{
+			float distanceToMove = Vector3.Distance(transform.position, anchorPoint.position) - anchorDistance;
+
+			Quaternion fromToRot = 
+		}
+	}
 }
