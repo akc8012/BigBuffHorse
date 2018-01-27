@@ -6,6 +6,10 @@ public class PlayerBallController : MonoBehaviour
 {
 	[SerializeField] int playerNdx = 0;
 	[SerializeField] float speedModifier = 1.0f;
+	[SerializeField] float collisionBounceModifier = 1.0f;
+
+	const float MaxVelocity = 7.3f;
+	const float VelocityDampen = 0.98f;
 
 	Camera cam;
 	Rigidbody rb;
@@ -14,6 +18,8 @@ public class PlayerBallController : MonoBehaviour
 
 	public Vector3 Distance { get { return distanceInFrame; } }
 	public int GetPlayerNdx { get { return playerNdx; } }
+	public float GetSpeed { get { Vector3 speed = rb.velocity; speed.y = 0; return speed.magnitude; } }
+	public float GetNormalalizedSpeed { get { Vector3 speed = rb.velocity; speed.y = 0; return speed.magnitude / MaxVelocity; } }
 
 	void Awake()
 	{
@@ -27,8 +33,10 @@ public class PlayerBallController : MonoBehaviour
 		Vector3 movement = GetCameraRelativeMovement(cam.transform, input);
 
 		rb.AddForce(Vector3.down, ForceMode.VelocityChange);
-		rb.AddForce(movement * speedModifier, ForceMode.VelocityChange);
 
+		rb.AddForce(movement * speedModifier, ForceMode.VelocityChange);
+		if (GetSpeed > MaxVelocity)
+			rb.velocity *= VelocityDampen;
 
 		Vector3 potentialDistance = transform.position - lastPos;
 		if (potentialDistance.magnitude > 0.01f)
@@ -45,5 +53,13 @@ public class PlayerBallController : MonoBehaviour
 		Vector3 moveDir = Quaternion.FromToRotation(Vector3.forward, cameraDir) * input;
 
 		return moveDir.normalized * speed;
+	}
+
+	void OnCollisionEnter(Collision col)
+	{
+		if (col.gameObject.tag == "Floor")
+			return;
+
+		rb.AddForce(col.contacts[0].normal * collisionBounceModifier, ForceMode.VelocityChange);
 	}
 }
