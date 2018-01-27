@@ -12,6 +12,7 @@ public class ScoreManager : MonoBehaviour
 	ScoreDisplay[] scoreDisplays;
 
 	[SerializeField] WinState[] roundWinners;
+	public WinState[] GetRoundWinners { get { return roundWinners; } } 
 
 	void Awake()
 	{

@@ -8,11 +8,13 @@ public class Countdown : MonoBehaviour
 {
 	[SerializeField]
 	bool running = true;
-	[SerializeField] int timeLeft;
+	[SerializeField] int startTime = 120;
+	int timeLeft;
 	[SerializeField] Text text;
 
 	void Awake()
 	{
+		timeLeft = startTime;
 		StartCoroutine("IncrementCountdown");
 	}
 
@@ -32,7 +34,7 @@ public class Countdown : MonoBehaviour
 
 	public void Reset()
 	{
-		SetTime(120);
+		SetTime(startTime);
 	}
 
 	public void SetTime(int value)
