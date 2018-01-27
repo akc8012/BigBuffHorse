@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class PlayerBallController : MonoBehaviour
 {
+	[SerializeField] int playerNdx = 0;
+	[SerializeField] float speedModifier = 1.0f;
+
 	Camera cam;
 	Rigidbody rb;
 	Vector3 lastPos;
 	Vector3 distanceInFrame;
 
 	public Vector3 Distance { get { return distanceInFrame; } }
+	public int GetPlayerNdx { get { return playerNdx; } }
 
 	void Awake()
 	{
@@ -19,11 +23,11 @@ public class PlayerBallController : MonoBehaviour
 	
 	void FixedUpdate()
 	{
-		Vector3 input = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+		Vector3 input = new Vector3(Input.GetAxisRaw("Horizontal" + playerNdx), 0, Input.GetAxisRaw("Vertical" + playerNdx));
 		Vector3 movement = GetCameraRelativeMovement(cam.transform, input);
 
 		rb.AddForce(Vector3.down, ForceMode.VelocityChange);
-		rb.AddForce(movement, ForceMode.VelocityChange);
+		rb.AddForce(movement * speedModifier, ForceMode.VelocityChange);
 
 
 		Vector3 potentialDistance = transform.position - lastPos;
