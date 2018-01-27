@@ -31,10 +31,21 @@ public abstract class Interactable : MonoBehaviour
 	protected void LateUpdate()
 	{
 		if (held)
-		{
+		{		
 			float distanceToMove = Vector3.Distance(transform.position, anchorPoint.position) - anchorDistance;
 
-			//Quaternion fromToRot = 
+			if (distanceToMove > 0)
+			{
+				Quaternion originalRot = transform.rotation;
+
+				Vector3 dirToPlayer = Vector3.Normalize(anchorPoint.position - transform.position);
+				Quaternion tempRot = transform.rotation;
+				tempRot.SetLookRotation(dirToPlayer, Vector3.up);
+
+				transform.position += transform.forward * distanceToMove;
+
+				transform.rotation = originalRot;
+			}
 		}
 	}
 }
