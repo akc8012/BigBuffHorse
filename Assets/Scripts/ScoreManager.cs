@@ -12,6 +12,7 @@ public class ScoreManager : MonoBehaviour
 	ScoreDisplay[] scoreDisplays;
 
 	[SerializeField] WinState[] roundWinners;
+	public WinState[] GetRoundWinners { get { return roundWinners; } } 
 
 	void Awake()
 	{
@@ -89,10 +90,24 @@ public class ScoreManager : MonoBehaviour
 	{
 		SetWinner(GetCurrentWinner());
 
+		if (WonFirstTwoRounds())
+		{
+			GameStateManager.instance.GameEnd();
+			return;
+		}
+
 		if (GetRound() < 3)
 			GameStateManager.instance.RoundEnd();
 		else
 			GameStateManager.instance.GameEnd();
+	}
+
+	bool WonFirstTwoRounds()
+	{
+		if (roundWinners[0] == WinState.Empty || roundWinners[0] == WinState.Tie)
+			return false;
+
+		return GetRound() == 2 && roundWinners[0] == roundWinners[1];
 	}
 
 	void SetWinner(WinState winner)
