@@ -15,11 +15,12 @@ public class PlayerPickup : MonoBehaviour
 	{
 		if (Input.GetButtonDown("Action" + controller.GetPlayerNdx))
 		{
-			Debug.Log("Pressing pickup button!");
-			if (seenItem != null)
+			//Debug.Log("Pressing pickup button!");
+			if (seenItem != null && heldItem == null)
 			{
 				Debug.Log("Picking up " + seenItem.gameObject.name + "!");
 				seenItem.OnPickup(transform);
+				heldItem = seenItem;
 			}
 		}
 	}
@@ -31,7 +32,7 @@ public class PlayerPickup : MonoBehaviour
 
 	public void OnPickupEnter(Collider pickup)
 	{
-		Debug.Log("I see " + pickup.gameObject.name + "!");
+		//Debug.Log("I see " + pickup.gameObject.name + "!");
 		seenItem = pickup.GetComponent<Interactable>();
 	}
 }
