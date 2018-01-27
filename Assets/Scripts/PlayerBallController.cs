@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerBallController : MonoBehaviour
 {
@@ -21,6 +19,8 @@ public class PlayerBallController : MonoBehaviour
 	public float GetSpeed { get { Vector3 speed = rb.velocity; speed.y = 0; return speed.magnitude; } }
 	public float GetNormalizedSpeed { get { Vector3 speed = rb.velocity; speed.y = 0; return speed.magnitude / MaxVelocity; } }
 
+	Vector3 input;
+
 	void Awake()
 	{
 		rb = GetComponent<Rigidbody>();
@@ -29,7 +29,7 @@ public class PlayerBallController : MonoBehaviour
 
 	void FixedUpdate()
 	{
-		Vector3 input = new Vector3(Input.GetAxisRaw("Horizontal" + playerNdx), 0, Input.GetAxisRaw("Vertical" + playerNdx));
+		input = new Vector3(Input.GetAxisRaw("Horizontal" + playerNdx), 0, Input.GetAxisRaw("Vertical" + playerNdx));
 		Vector3 movement = GetCameraRelativeMovement(cam.transform, input);
 
 		rb.AddForce(Vector3.down, ForceMode.VelocityChange);
@@ -61,5 +61,9 @@ public class PlayerBallController : MonoBehaviour
 			return;
 
 		rb.AddForce(col.contacts[0].normal * collisionBounceModifier, ForceMode.VelocityChange);
+	}
+
+	public Vector3 GetInput() {
+		return input;
 	}
 }

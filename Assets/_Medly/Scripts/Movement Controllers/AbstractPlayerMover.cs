@@ -31,7 +31,7 @@ public abstract class AbstractPlayerMover : MonoBehaviour
     [SerializeField] protected bool smoothRotation = true;    // Toggles rotation smoothing.
     [SerializeField] protected bool swapZWithY = false;       // Allows for up and down control instead of forward and back
 
-    protected float H, V;                                     // Values to represent input commonly used for movement.
+	protected float H, V; // Values to represent input commonly used for movement.
 
     // protected float J;
 

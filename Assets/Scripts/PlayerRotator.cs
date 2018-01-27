@@ -1,28 +1,36 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerRotator : MonoBehaviour
 {
-	[SerializeField] PlayerBallController playerBallController;
+	[SerializeField] protected PlayerBallController ball;
+	[SerializeField] protected float rotationSmooth = 15f;
 
-	Quaternion lastValidRot;
-	public Vector3 GetForward { get { return transform.rotation * Vector3.forward; } }
-	
-	void Start()
-	{
-		
+	// Not all sticks work 100% This accomodates faulty controllers.
+	[SerializeField] protected float gamepadError = 0.1f;     
+
+	protected Vector3 input;
+	protected Rigidbody rigidBody;
+
+	void Awake() {
+		rigidBody = GetComponent<Rigidbody>();
 	}
 
 	void LateUpdate()
 	{
-		Vector3 dist = playerBallController.Distance.normalized; dist.y = 0;
+		input = ball.GetInput();
 
-		if (dist != Vector3.zero)
-		{
-			transform.rotation = Quaternion.LookRotation(dist);
-			lastValidRot = transform.rotation;
-		}
-		else transform.rotation = lastValidRot;
+		transform.position = ball.transform.position;
+
+		if (Mathf.Abs(input.x) > gamepadError || Mathf.Abs(input.z) > gamepadError)
+			Rotate();
+	}
+
+	protected virtual void Rotate()
+	{
+		Quaternion tempRot = transform.rotation;
+		tempRot.SetLookRotation(input, Vector3.up);
+
+		//Smoothly rotate our player to face the direction it moves to drastically improve aesthetics.
+		transform.rotation = Quaternion.Lerp(transform.rotation, tempRot, rotationSmooth * Time.deltaTime);
 	}
 }
