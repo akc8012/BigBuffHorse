@@ -9,49 +9,45 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1720608702704054}
+  m_RootGameObject: {fileID: 1323609058760006}
   m_IsPrefabParent: 1
---- !u!1 &1720608702704054
+--- !u!1 &1323609058760006
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4709258983348314}
-  - component: {fileID: 114597437413815612}
+  - component: {fileID: 4784191815285396}
+  - component: {fileID: 114349526231436012}
   m_Layer: 0
-  m_Name: Loader
+  m_Name: ScoreManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4709258983348314
+--- !u!4 &4784191815285396
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1720608702704054}
+  m_GameObject: {fileID: 1323609058760006}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 433.68085, y: 184.64677, z: 17.518066}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114597437413815612
+--- !u!114 &114349526231436012
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1720608702704054}
+  m_GameObject: {fileID: 1323609058760006}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a14f991e2e338c49b855482f57aa061, type: 3}
+  m_Script: {fileID: 11500000, guid: 420d406ef2f9ecd409335530509ce96e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameStateManager: {fileID: 1780746290576506, guid: d4f87580d0c99e2408e9cbd928adefd2,
-    type: 2}
-  scoreManager: {fileID: 1323609058760006, guid: 6748e2d327d64e04d93c6b9fb976857d,
-    type: 2}
