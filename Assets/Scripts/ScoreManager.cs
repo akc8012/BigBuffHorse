@@ -65,6 +65,26 @@ public class ScoreManager : MonoBehaviour
 			return WinState.P1;
 	}
 
+	public WinState GetGameWinner()
+	{
+		int p0Wins = 0, p1Wins = 0;
+
+		for (int i = 0; i < roundWinners.Length; i++)
+		{
+			if (roundWinners[i] == WinState.P0)
+				p0Wins++;
+			if (roundWinners[i] == WinState.P1)
+				p1Wins++;
+		}
+
+		if (p0Wins == p1Wins)
+			return WinState.Tie;
+		else if (p0Wins > p1Wins)
+			return WinState.P0;
+		else
+			return WinState.P1;
+	}
+
 	public void RoundEnd()
 	{
 		SetWinner(GetCurrentWinner());

@@ -47,7 +47,7 @@ public class GameStateManager : MonoBehaviour
 
 	public void GameEnd()
 	{
-		print(ScoreManager.instance.GetCurrentWinner());
+		print("GAME WINNER: " + ScoreManager.instance.GetGameWinner());
 
 		Instantiate(gameEndCanvas);
 		gameState = GameState.Waiting;
