@@ -22,7 +22,7 @@ public class PlayerHolder : MonoBehaviour
 		controller = GetComponent<PlayerBallController>();
 		rotator = GetComponentInChildren<PlayerRotator>();
 	}
-	
+
 	void Update()
 	{
 		if (Input.GetButtonDown("Action" + controller.GetPlayerNdx))

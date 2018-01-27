@@ -19,7 +19,7 @@ public class PlayerBallController : MonoBehaviour
 	public Vector3 Distance { get { return distanceInFrame; } }
 	public int GetPlayerNdx { get { return playerNdx; } }
 	public float GetSpeed { get { Vector3 speed = rb.velocity; speed.y = 0; return speed.magnitude; } }
-	public float GetNormalalizedSpeed { get { Vector3 speed = rb.velocity; speed.y = 0; return speed.magnitude / MaxVelocity; } }
+	public float GetNormalizedSpeed { get { Vector3 speed = rb.velocity; speed.y = 0; return speed.magnitude / MaxVelocity; } }
 
 	void Awake()
 	{
