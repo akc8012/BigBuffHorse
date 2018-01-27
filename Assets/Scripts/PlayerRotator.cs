@@ -7,6 +7,7 @@ public class PlayerRotator : MonoBehaviour
 	[SerializeField] PlayerBallController playerBallController;
 
 	Quaternion lastValidRot;
+	public Vector3 GetForward { get { return transform.rotation * Vector3.forward; } }
 	
 	void Start()
 	{

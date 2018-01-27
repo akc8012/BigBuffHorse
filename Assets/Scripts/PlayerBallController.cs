@@ -26,7 +26,7 @@ public class PlayerBallController : MonoBehaviour
 		rb = GetComponent<Rigidbody>();
 		cam = Camera.main;
 	}
-	
+
 	void FixedUpdate()
 	{
 		Vector3 input = new Vector3(Input.GetAxisRaw("Horizontal" + playerNdx), 0, Input.GetAxisRaw("Vertical" + playerNdx));
