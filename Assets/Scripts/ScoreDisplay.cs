@@ -27,6 +27,9 @@ public class ScoreDisplay : MonoBehaviour
 
 	public void AddScore(int points)
 	{
+		if (GameStateManager.instance.GetState == GameState.Waiting)
+			return;
+
 		score += points;
 		UpdateDisplay();
 	}

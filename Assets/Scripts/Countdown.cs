@@ -24,18 +24,26 @@ public class Countdown : MonoBehaviour
 			SetTime(timeLeft);
 
 			if (timeLeft <= 0)
-			{
-				GameStateManager.instance.GameEnd();
-				running = false;
-			}
+				EndCountdown();
 			
 			yield return new WaitForSeconds(1);
 		}
+	}
+
+	public void Reset()
+	{
+		SetTime(120);
 	}
 
 	public void SetTime(int value)
 	{
 		TimeSpan time = TimeSpan.FromSeconds(value);
 		text.text = time.Minutes.ToString() + ":" + (time.Seconds < 10 ? "0" : "") + time.Seconds.ToString();
+	}
+
+	void EndCountdown()
+	{
+		ScoreManager.instance.RoundEnd();
+		running = false;
 	}
 }
