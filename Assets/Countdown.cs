@@ -2,7 +2,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
-using System;
 
 public class Countdown : MonoBehaviour
 {
@@ -10,6 +9,7 @@ public class Countdown : MonoBehaviour
 	bool running = true;
 	[SerializeField] int timeLeft;
 	[SerializeField] Text text;
+	[SerializeField] UnityEvent onTimeEnd;
 
 	void Awake()
 	{
@@ -21,21 +21,21 @@ public class Countdown : MonoBehaviour
 		while (running)
 		{
 			timeLeft--;
-			SetTime(timeLeft);
+			text.text = timeLeft.ToString();
 
 			if (timeLeft <= 0)
 			{
-				GameStateManager.instance.GameEnd();
+				onTimeEnd.Invoke();
 				running = false;
 			}
-			
+
 			yield return new WaitForSeconds(1);
 		}
 	}
 
 	public void SetTime(int value)
 	{
-		TimeSpan time = TimeSpan.FromSeconds(value);
-		text.text = time.Minutes.ToString() + ":" + (time.Seconds < 10 ? "0" : "") + time.Seconds.ToString();
+		timeLeft = value;
+		text.text = timeLeft.ToString();
 	}
 }
