@@ -32,7 +32,7 @@ public class Countdown : MonoBehaviour
 			if (timeLeft <= 0)
 				EndCountdown();
 
-			//SoundManager.instance.PlayClip("tick" + UnityEngine.Random.Range(0, 5));
+			SoundManager.instance.PlayClip("tick" + UnityEngine.Random.Range(0, 5));
 			yield return new WaitForSeconds(1);
 		}
 	}
@@ -50,7 +50,7 @@ public class Countdown : MonoBehaviour
 
 	void EndCountdown()
 	{
-		ScoreManager.instance.RoundEnd();
+		GameObject.Find("WhistleControl").GetComponent<Whistle>().Play();
 		running = false;
 	}
 }

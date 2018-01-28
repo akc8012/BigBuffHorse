@@ -20,7 +20,7 @@ public class Chute : MonoBehaviour
 
 	void Update()
 	{
-		if (Time.time >= spawnTimer)
+		if (Time.time >= spawnTimer && GameStateManager.instance.GetState == GameState.Playing)
 		{
 			SpawnObject();
 			SetNextSpawnTime();
