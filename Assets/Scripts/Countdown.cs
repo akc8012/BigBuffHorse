@@ -15,6 +15,10 @@ public class Countdown : MonoBehaviour
 	void Start()
 	{
 		timeLeft = startTime;
+	}
+
+	public void StartTimer()
+	{
 		StartCoroutine("IncrementCountdown");
 	}
 
