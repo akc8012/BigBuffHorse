@@ -53,4 +53,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameEndCanvas: {fileID: 1899915457897608, guid: 6d85142727ab40f4b9e8658314c3e5cc,
     type: 2}
-  startImmediately: 1
+  startImmediately: 0
