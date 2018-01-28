@@ -11,18 +11,19 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1943940760491502}
   m_IsPrefabParent: 1
---- !u!1 &1194828697738642
+--- !u!1 &1434825958266920
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4537187789994348}
-  - component: {fileID: 33015016380074358}
-  - component: {fileID: 23154197566743804}
+  - component: {fileID: 4043422709841852}
+  - component: {fileID: 33685210441667792}
+  - component: {fileID: 23429854749903160}
+  - component: {fileID: 95595864268005230}
   m_Layer: 0
-  m_Name: Box002
+  m_Name: Chute L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,6 +60,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4043422709841852
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1434825958266920}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: -0.7071068}
+  m_LocalPosition: {x: -0.010000229, y: 0.10999966, z: -0.019999504}
+  m_LocalScale: {x: 0.0100000035, y: 0.01, z: 0.0100000035}
+  m_Children: []
+  m_Father: {fileID: 4211344356814956}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!4 &4211344356814956
 Transform:
   m_ObjectHideFlags: 1
@@ -66,10 +80,10 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1943940760491502}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -9.87, y: 6.58, z: 13.72}
+  m_LocalPosition: {x: -9.97, y: 6.51, z: 13.72}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4537187789994348}
+  - {fileID: 4043422709841852}
   - {fileID: 4501949190460664}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -87,25 +101,12 @@ Transform:
   m_Father: {fileID: 4211344356814956}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4537187789994348
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1194828697738642}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4211344356814956}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23154197566743804
+--- !u!23 &23429854749903160
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1194828697738642}
+  m_GameObject: {fileID: 1434825958266920}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -113,7 +114,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 802139ef2d9438c4e985b35ad6e42295, type: 2}
+  - {fileID: 2100000, guid: d8b3771e62691014ba009d52d202aaf7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -132,13 +133,30 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33015016380074358
+--- !u!33 &33685210441667792
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1194828697738642}
-  m_Mesh: {fileID: 4300002, guid: 9206def94ad70284d92fbe69d7f7e917, type: 3}
+  m_GameObject: {fileID: 1434825958266920}
+  m_Mesh: {fileID: 4300000, guid: 24858a40068a4f143843a00767cc13d4, type: 3}
+--- !u!95 &95595864268005230
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1434825958266920}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 24858a40068a4f143843a00767cc13d4, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114243222137030334
 MonoBehaviour:
   m_ObjectHideFlags: 1
