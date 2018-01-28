@@ -5,6 +5,10 @@ public class PlayerPickup : MonoBehaviour
 	Interactable heldItem;
 	Interactable seenItem;
 	PlayerBallController controller;
+	[SerializeField] Animator animator;
+	[SerializeField] IKControl ik;
+	[SerializeField] Transform throwTransform;
+	[SerializeField] float throwForce = 10;
 
 	void Awake()
 	{
@@ -13,24 +17,31 @@ public class PlayerPickup : MonoBehaviour
 
 	void Update()
 	{
-		if (Input.GetButtonDown("Action" + controller.GetPlayerNdx))
+		if (GameStateManager.instance.GetState == GameState.Playing)
 		{
-			if (!heldItem)
+			if (Input.GetButtonDown("Action" + controller.GetPlayerNdx))
 			{
-				// PICKUP
-				if (seenItem)
+				if (!heldItem)
 				{
-					Debug.Log("Picking up " + seenItem.gameObject.name + "!");
-					seenItem.OnPickup(transform);
-					heldItem = seenItem;
+					// PICKUP
+					if (seenItem)
+					{
+						seenItem.OnPickup(transform);
+						heldItem = seenItem;
+					}
+				}
+				else
+				{
+					// DROP
+					heldItem.OnDrop(transform);
+					heldItem = null;
 				}
 			}
-			else
+
+			if (Input.GetButtonDown("Throw" + controller.GetPlayerNdx))
 			{
-				// DROP
-				Debug.Log("Dropping " + seenItem.gameObject.name + ".");
-				heldItem.OnDrop(transform);
-				heldItem = null;
+				animator.SetTrigger("Throw");
+				Throw();
 			}
 		}
 	}
@@ -42,7 +53,23 @@ public class PlayerPickup : MonoBehaviour
 
 	public void OnPickupEnter(Collider pickup)
 	{
-		//Debug.Log("I see " + pickup.gameObject.name + "!");
 		seenItem = pickup.GetComponent<Interactable>();
+	}
+
+	public void OnPickupExit(Collider pickup)
+	{
+		seenItem = null;
+	}
+
+	public void Throw()
+	{
+		if (heldItem)
+		{
+			ik.ikActive = false;
+			heldItem.GetComponent<Interactable>().OnDrop(transform);
+			heldItem.transform.position = throwTransform.position;
+			heldItem.GetComponent<Rigidbody>().AddForce(throwTransform.forward * throwForce, ForceMode.Impulse);	
+			heldItem = null;
+		}
 	}
 }

@@ -5,6 +5,7 @@ public class PlayerBallController : MonoBehaviour
 	[SerializeField] int playerNdx = 0;
 	[SerializeField] float speedModifier = 1.0f;
 	[SerializeField] float collisionBounceModifier = 1.0f;
+	[SerializeField] PlayerFallDown playerFallDown;
 
 	const float MaxVelocity = 7.3f;
 	const float VelocityDampen = 0.98f;
@@ -18,6 +19,7 @@ public class PlayerBallController : MonoBehaviour
 	public int GetPlayerNdx { get { return playerNdx; } }
 	public float GetSpeed { get { Vector3 speed = rb.velocity; speed.y = 0; return speed.magnitude; } }
 	public float GetNormalizedSpeed { get { Vector3 speed = rb.velocity; speed.y = 0; return speed.magnitude / MaxVelocity; } }
+	public bool fallen = false;
 
 	Vector3 input;
 
@@ -29,20 +31,23 @@ public class PlayerBallController : MonoBehaviour
 
 	void FixedUpdate()
 	{
-		input = new Vector3(Input.GetAxisRaw("Horizontal" + playerNdx), 0, Input.GetAxisRaw("Vertical" + playerNdx));
-		Vector3 movement = GetCameraRelativeMovement(cam.transform, input);
+		if (GameStateManager.instance.GetState == GameState.Playing && !fallen)
+		{
+			input = new Vector3(Input.GetAxisRaw("Horizontal" + playerNdx), 0, Input.GetAxisRaw("Vertical" + playerNdx));
+			Vector3 movement = GetCameraRelativeMovement(cam.transform, input);
 
-		rb.AddForce(Vector3.down, ForceMode.VelocityChange);
+			rb.AddForce(Vector3.down, ForceMode.VelocityChange);
 
-		rb.AddForce(movement * speedModifier, ForceMode.VelocityChange);
-		if (GetSpeed > MaxVelocity)
-			rb.velocity *= VelocityDampen;
+			rb.AddForce(movement * speedModifier, ForceMode.VelocityChange);
+			if (GetSpeed > MaxVelocity)
+				rb.velocity *= VelocityDampen;
 
-		Vector3 potentialDistance = transform.position - lastPos;
-		if (potentialDistance.magnitude > 0.01f)
-			distanceInFrame = potentialDistance;
+			Vector3 potentialDistance = transform.position - lastPos;
+			if (potentialDistance.magnitude > 0.01f)
+				distanceInFrame = potentialDistance;
 
-		lastPos = transform.position;
+			lastPos = transform.position;
+		}
 	}
 
 	Vector3 GetCameraRelativeMovement(Transform cam, Vector3 input)
@@ -59,6 +64,12 @@ public class PlayerBallController : MonoBehaviour
 	{
 		if (col.gameObject.tag == "Floor")
 			return;
+		else
+			if(col.gameObject.tag == "Interactable" && col.gameObject.GetComponent<Interactable>().lastVelocity > 15)
+			{
+				playerFallDown.FallDown();
+				fallen = true;
+			}
 
 		rb.AddForce(col.contacts[0].normal * collisionBounceModifier, ForceMode.VelocityChange);
 	}

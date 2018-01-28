@@ -1,6 +1,3 @@
-﻿using System;
-using UnityEngine;
-
-public class Box : Interactable {
+﻿public class Box : Interactable {
 
 }
