@@ -8,12 +8,19 @@ public class RoundCanvasUI : MonoBehaviour
 	[SerializeField] GameObject roundIndicator;
 	[SerializeField] Text roundText;
 
-	// ShowRoundWinner
-
-
 	public void ShowRoundIndicator(int round)
 	{
 		roundText.text = "Round " + round + " Start!";
+		roundIndicator.SetActive(true);
+	}
+
+	public void ShowRoundWinner(string winner)
+	{
+		if (winner == "Tie")
+			roundText.text = "It's a tie";
+		else
+			roundText.text = "Player " + winner + " Wins!";
+
 		roundIndicator.SetActive(true);
 	}
 
