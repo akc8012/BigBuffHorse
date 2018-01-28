@@ -23,16 +23,17 @@ public class PlayerRotator : MonoBehaviour
 		input = ball.GetInput();
 		transform.position = ball.transform.position;
 
-		animator.SetFloat("Horizontal", input.x);
-		animator.SetFloat("Vertical", input.z);		
+		animator.SetFloat("Speed", input.magnitude);
 
 		if (Mathf.Abs(input.x) > gamepadError || Mathf.Abs(input.z) > gamepadError)
 		{
 			Rotate();
+			animator.SetBool("Moving", true);
 			animator.SetTrigger("StartMoving");
 		}
 		else
 		{
+			animator.SetBool("Moving", false);
 			animator.SetTrigger("StopMoving");
 		}
 	}

@@ -16,6 +16,18 @@ public abstract class Interactable : MonoBehaviour
 
 	public int GetPoints { get { return points; } }
 
+	public float lastVelocity;
+	Rigidbody rigidBody;
+
+	void Awake() {
+		rigidBody = GetComponent<Rigidbody>();
+	}
+
+	void LateUpdate()
+	{
+		lastVelocity = rigidBody.velocity.magnitude;
+	}
+
 	// Function to be triggered when player picks up this object.
 	// I.E., bomb starts fuse.
 	public virtual void OnPickup(Transform player)
@@ -45,5 +57,11 @@ public abstract class Interactable : MonoBehaviour
 		ik.rightHandObj = null;
 
 		Destroy(gameObject.GetComponent<SpringJoint>());
+	}
+
+	public virtual void OnThrow(Transform player)
+	{
+		OnDrop(transform);
+
 	}
 }
