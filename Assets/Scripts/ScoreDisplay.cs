@@ -31,6 +31,11 @@ public class ScoreDisplay : MonoBehaviour
 			return;
 
 		score += points;
+
+		SoundManager.instance.PlayClip("ding" + Random.Range(0, 2));
+		if (Random.Range(0, 100) < 10)
+			SoundManager.instance.PlayClip("cheer" + Random.Range(0, 2));
+
 		UpdateDisplay();
 	}
 

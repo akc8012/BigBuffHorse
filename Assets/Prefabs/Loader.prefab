@@ -55,3 +55,5 @@ MonoBehaviour:
     type: 2}
   scoreManager: {fileID: 1323609058760006, guid: 6748e2d327d64e04d93c6b9fb976857d,
     type: 2}
+  soundManager: {fileID: 1094181290998684, guid: 4dca9808f7b59a345bb7d5d2889e1bab,
+    type: 2}

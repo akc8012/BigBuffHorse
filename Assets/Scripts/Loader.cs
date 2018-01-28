@@ -6,6 +6,7 @@ public class Loader : MonoBehaviour
 {
 	[SerializeField] GameObject gameStateManager;
 	[SerializeField] GameObject scoreManager;
+	[SerializeField] GameObject soundManager;
 
 	void Awake()
 	{
@@ -14,5 +15,8 @@ public class Loader : MonoBehaviour
 
 		if (ScoreManager.instance == null)
 			Instantiate(scoreManager);
+
+		if (SoundManager.instance == null)
+			Instantiate(soundManager);
 	}
 }
