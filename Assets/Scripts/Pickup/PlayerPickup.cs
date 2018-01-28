@@ -15,12 +15,22 @@ public class PlayerPickup : MonoBehaviour
 	{
 		if (Input.GetButtonDown("Action" + controller.GetPlayerNdx))
 		{
-			//Debug.Log("Pressing pickup button!");
-			if (seenItem != null && heldItem == null)
+			if (!heldItem)
 			{
-				Debug.Log("Picking up " + seenItem.gameObject.name + "!");
-				seenItem.OnPickup(transform);
-				heldItem = seenItem;
+				// PICKUP
+				if (seenItem)
+				{
+					Debug.Log("Picking up " + seenItem.gameObject.name + "!");
+					seenItem.OnPickup(transform);
+					heldItem = seenItem;
+				}
+			}
+			else
+			{
+				// DROP
+				Debug.Log("Dropping " + seenItem.gameObject.name + ".");
+				heldItem.OnDrop(transform);
+				heldItem = null;
 			}
 		}
 	}

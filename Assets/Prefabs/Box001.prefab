@@ -68,7 +68,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1974122783764496}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 2.4091773, y: 1.51, z: -0.3}
+  m_LocalPosition: {x: -1.863328, y: -2.5428362, z: 15.277262}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4717058500043234}
@@ -179,9 +179,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60f4947df2f55e045bb699868ad433c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points: 0
-  size: 0
-  spring: 100
+  points: 10
+  spring: 500
   damper: 0.2
   minDistance: 0.4
   maxDistance: 0.6
+  LHand: {fileID: 4907350006550492}
+  RHand: {fileID: 4717058500043234}
