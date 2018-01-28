@@ -1,0 +1,125 @@
+fileFormatVersion: 2
+guid: 464e85086ed87154db8ed691bd08b6bf
+timeCreated: 1517153363
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: bomb_Base
+    100004: bomb_Cap
+    100006: bomb_Clock
+    100008: bomb_ClockGlass
+    100010: bomb_PaperOpening
+    100012: bomb_RibbonBase
+    100014: bomb_RibbonBow
+    100016: bomb_RibbonMiddle
+    100018: bomb_Rope
+    400000: //RootNode
+    400002: bomb_Base
+    400004: bomb_Cap
+    400006: bomb_Clock
+    400008: bomb_ClockGlass
+    400010: bomb_PaperOpening
+    400012: bomb_RibbonBase
+    400014: bomb_RibbonBow
+    400016: bomb_RibbonMiddle
+    400018: bomb_Rope
+    2300000: bomb_Base
+    2300002: bomb_Cap
+    2300004: bomb_Clock
+    2300006: bomb_ClockGlass
+    2300008: bomb_PaperOpening
+    2300010: bomb_RibbonBase
+    2300012: bomb_RibbonBow
+    2300014: bomb_RibbonMiddle
+    2300016: bomb_Rope
+    3300000: bomb_Base
+    3300002: bomb_Cap
+    3300004: bomb_Clock
+    3300006: bomb_ClockGlass
+    3300008: bomb_PaperOpening
+    3300010: bomb_RibbonBase
+    3300012: bomb_RibbonBow
+    3300014: bomb_RibbonMiddle
+    3300016: bomb_Rope
+    4300000: bomb_PaperOpening
+    4300002: bomb_ClockGlass
+    4300004: bomb_Clock
+    4300006: bomb_Rope
+    4300008: bomb_Cap
+    4300010: bomb_Base
+    4300012: bomb_RibbonBow
+    4300014: bomb_RibbonMiddle
+    4300016: bomb_RibbonBase
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
