@@ -16,6 +16,7 @@ public abstract class Interactable : MonoBehaviour
 
 	public int GetPoints { get { return points; } }
 
+	public bool scored = false;
 	public float lastVelocity;
 	Rigidbody rigidBody;
 
@@ -62,6 +63,9 @@ public abstract class Interactable : MonoBehaviour
 	public virtual void OnThrow(Transform player)
 	{
 		OnDrop(transform);
+	}
 
+	public virtual void Destroy() {
+		Destroy(gameObject, 1);
 	}
 }
