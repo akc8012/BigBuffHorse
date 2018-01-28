@@ -9,8 +9,8 @@ public class GameStateManager : MonoBehaviour
 {
 	public static GameStateManager instance = null;
 
-	[SerializeField]
-	GameObject gameEndCanvas;
+	[SerializeField] GameObject gameEndCanvas;
+	[SerializeField] bool startImmediately = false;
 
 	GameState gameState = GameState.Waiting;
 	public GameState GetState { get { return gameState; } }
@@ -24,7 +24,9 @@ public class GameStateManager : MonoBehaviour
 			Destroy(gameObject);
 
 		DontDestroyOnLoad(gameObject);
-		SetPlayingWhenStartingInGame();
+
+		if (startImmediately)
+			SetPlayingWhenStartingInGame();
 	}
 
 	void SetPlayingWhenStartingInGame()
@@ -38,6 +40,20 @@ public class GameStateManager : MonoBehaviour
 		ScoreManager.instance.ResetScore();
 		SceneManager.LoadScene(1);
 		gameState = GameState.Playing;
+
+		StartCoroutine(ShowRoundIndicator(3));
+	}
+
+	IEnumerator ShowRoundIndicator(float t)
+	{
+		yield return null;
+		RoundCanvasUI roundCanvasUI = GameObject.Find("RoundCanvas").GetComponent<RoundCanvasUI>();
+		roundCanvasUI.ShowRoundIndicator(ScoreManager.instance.GetRound() + 1);
+
+		yield return new WaitForSeconds(t);
+
+		RoundStart();
+		roundCanvasUI.HideRoundIndicator();
 	}
 
 	public void GoToTitle()
@@ -53,6 +69,12 @@ public class GameStateManager : MonoBehaviour
 		gameState = GameState.Waiting;
 	}
 
+	public void RoundStart()
+	{
+		GameObject.Find("Countdown").GetComponent<Countdown>().StartTimer();
+		gameState = GameState.Playing;
+	}
+
 	public void RoundEnd()
 	{
 		print(ScoreManager.instance.GetCurrentWinner());
@@ -64,8 +86,9 @@ public class GameStateManager : MonoBehaviour
 	IEnumerator WaitForEndRound(float t)
 	{
 		yield return new WaitForSeconds(t);
-		gameState = GameState.Playing;
-
+		
 		SceneManager.LoadScene(1);
+
+		StartCoroutine(ShowRoundIndicator(t));
 	}
 }

@@ -12,9 +12,13 @@ public class Countdown : MonoBehaviour
 	int timeLeft;
 	[SerializeField] Text text;
 
-	void Awake()
+	void Start()
 	{
 		timeLeft = startTime;
+	}
+
+	public void StartTimer()
+	{
 		StartCoroutine("IncrementCountdown");
 	}
 

@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/StartScene.unity
     guid: fdf20bfa9d8de6549877afb08fe17b3f
   - enabled: 1
-    path: Assets/Scenes/AndrewScene.unity
-    guid: 8938ebbd2417d0f4881c3de701e99896
-  - enabled: 1
     path: Assets/Scenes/BenScene.unity
     guid: 6bfd4ba70241e1c46981044eabf41c2f
+  - enabled: 1
+    path: Assets/Scenes/AndrewScene.unity
+    guid: 8938ebbd2417d0f4881c3de701e99896
