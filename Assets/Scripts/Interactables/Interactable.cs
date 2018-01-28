@@ -14,6 +14,8 @@ public abstract class Interactable : MonoBehaviour
 	[SerializeField] Transform LHand;
 	[SerializeField] Transform RHand;
 
+	public int GetPoints { get { return points; } }
+
 	// Function to be triggered when player picks up this object.
 	// I.E., bomb starts fuse.
 	public virtual void OnPickup(Transform player)
