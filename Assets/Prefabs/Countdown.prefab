@@ -151,7 +151,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: d8b3771e62691014ba009d52d202aaf7, type: 2}
+  - {fileID: 2100000, guid: 849d2a74f68e81444971744ab0105b6e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -183,7 +183,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: d8b3771e62691014ba009d52d202aaf7, type: 2}
+  - {fileID: 2100000, guid: 849d2a74f68e81444971744ab0105b6e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -278,7 +278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   running: 1
-  startTime: 60000000
+  startTime: 120
   text: {fileID: 114051797367218654}
 --- !u!114 &114431850625481848
 MonoBehaviour:
@@ -378,6 +378,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0, y: 3.82}
+  m_AnchoredPosition: {x: -0, y: 4.29}
   m_SizeDelta: {x: 372.23, y: 368}
   m_Pivot: {x: 0.5, y: 0.5}

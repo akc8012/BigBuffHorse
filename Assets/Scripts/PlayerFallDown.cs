@@ -10,11 +10,6 @@ public class PlayerFallDown : MonoBehaviour
 
 	GameObject ragDoll;
 
-	void Update() {
-		if (Input.GetKeyDown(KeyCode.Space))
-			FallDown();
-	}
-
 	public void FallDown()
 	{
 		playerRenderer.enabled = false;
