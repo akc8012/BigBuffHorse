@@ -12,11 +12,15 @@ public class PlayerFallDown : MonoBehaviour
 
 	public void FallDown()
 	{
-		playerRenderer.enabled = false;
-		playerCollider.enabled = false;
-		playerRigidBody.isKinematic = true;
-		ragDoll = Instantiate(RagdollPrefab, transform.position + Vector3.down * .5f, transform.rotation);
-		Invoke("GetUp", 3);
+		if (!ballController.fallen)
+		{
+			ballController.fallen = true;
+			playerRenderer.enabled = false;
+			playerCollider.enabled = false;
+			playerRigidBody.isKinematic = true;
+			ragDoll = Instantiate(RagdollPrefab, transform.position + Vector3.down * .5f, transform.rotation);
+			Invoke("GetUp", 3);
+		}
 	}
 
 	public void GetUp()
