@@ -1,0 +1,241 @@
+fileFormatVersion: 2
+guid: 1edaa8672f4bbb14e9253643fd9851ce
+timeCreated: 1517154886
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Bar
+    100002: Center_Lower_Mouth
+    100004: Center_Upper_Mouth
+    100006: Centerbar
+    100008: Centerbar_BE
+    100010: L_Corner
+    100012: L_Lower
+    100014: L_Lower_Corner
+    100016: L_Upper
+    100018: L_Upper_Corner
+    100020: Mouth_GRP
+    100022: R_Corner
+    100024: R_Lower
+    100026: R_Lower_Corner
+    100028: R_Upper
+    100030: R_Upper_Corner
+    100032: Tube01
+    100034: Tube02
+    100036: Tube03
+    100038: Tube04
+    100040: Tube05
+    100042: Tube06
+    100044: Tube07
+    100046: Tube08
+    100048: Tube09
+    100050: //RootNode
+    100052: Whistle
+    100054: Whistle01
+    100056: Whistle02
+    100058: Whistle_BE
+    100060: Whistle_ikHandle1
+    100062: Whistle_ikHandle2
+    100064: Whistle_Root
+    400000: Bar
+    400002: Center_Lower_Mouth
+    400004: Center_Upper_Mouth
+    400006: Centerbar
+    400008: Centerbar_BE
+    400010: L_Corner
+    400012: L_Lower
+    400014: L_Lower_Corner
+    400016: L_Upper
+    400018: L_Upper_Corner
+    400020: Mouth_GRP
+    400022: R_Corner
+    400024: R_Lower
+    400026: R_Lower_Corner
+    400028: R_Upper
+    400030: R_Upper_Corner
+    400032: Tube01
+    400034: Tube02
+    400036: Tube03
+    400038: Tube04
+    400040: Tube05
+    400042: Tube06
+    400044: Tube07
+    400046: Tube08
+    400048: Tube09
+    400050: //RootNode
+    400052: Whistle
+    400054: Whistle01
+    400056: Whistle02
+    400058: Whistle_BE
+    400060: Whistle_ikHandle1
+    400062: Whistle_ikHandle2
+    400064: Whistle_Root
+    4300000: Whistle
+    7400000: Aroooga
+    9500000: //RootNode
+    13700000: Whistle
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Aroooga
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 55
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Whistle
+        weight: 1
+      - path: Whistle_ikHandle1
+        weight: 1
+      - path: Whistle_ikHandle2
+        weight: 1
+      - path: Whistle_Root
+        weight: 1
+      - path: Whistle_Root/Bar
+        weight: 1
+      - path: Whistle_Root/Tube01
+        weight: 1
+      - path: Whistle_Root/Tube01/Tube02
+        weight: 1
+      - path: Whistle_Root/Tube01/Tube02/Tube03
+        weight: 1
+      - path: Whistle_Root/Tube01/Tube02/Tube03/Tube04
+        weight: 1
+      - path: Whistle_Root/Tube01/Tube02/Tube03/Tube04/Tube05
+        weight: 1
+      - path: Whistle_Root/Tube01/Tube02/Tube03/Tube04/Tube05/Tube06
+        weight: 1
+      - path: Whistle_Root/Tube01/Tube02/Tube03/Tube04/Tube05/Tube06/Tube07
+        weight: 1
+      - path: Whistle_Root/Tube01/Tube02/Tube03/Tube04/Tube05/Tube06/Tube07/Tube08
+        weight: 1
+      - path: Whistle_Root/Tube01/Tube02/Tube03/Tube04/Tube05/Tube06/Tube07/Tube08/Tube09
+        weight: 1
+      - path: Whistle_Root/Tube01/Tube02/Tube03/Tube04/Tube05/Tube06/Tube07/Tube08/Tube09/Centerbar
+        weight: 1
+      - path: Whistle_Root/Tube01/Tube02/Tube03/Tube04/Tube05/Tube06/Tube07/Tube08/Tube09/Centerbar/Centerbar_BE
+        weight: 1
+      - path: Whistle_Root/Tube01/Tube02/Tube03/Tube04/Tube05/Tube06/Tube07/Tube08/Tube09/Whistle01
+        weight: 1
+      - path: Whistle_Root/Tube01/Tube02/Tube03/Tube04/Tube05/Tube06/Tube07/Tube08/Tube09/Whistle01/Mouth_GRP
+        weight: 1
+      - path: Whistle_Root/Tube01/Tube02/Tube03/Tube04/Tube05/Tube06/Tube07/Tube08/Tube09/Whistle01/Mouth_GRP/Center_Lower_Mouth
+        weight: 1
+      - path: Whistle_Root/Tube01/Tube02/Tube03/Tube04/Tube05/Tube06/Tube07/Tube08/Tube09/Whistle01/Mouth_GRP/Center_Upper_Mouth
+        weight: 1
+      - path: Whistle_Root/Tube01/Tube02/Tube03/Tube04/Tube05/Tube06/Tube07/Tube08/Tube09/Whistle01/Mouth_GRP/L_Corner
+        weight: 1
+      - path: Whistle_Root/Tube01/Tube02/Tube03/Tube04/Tube05/Tube06/Tube07/Tube08/Tube09/Whistle01/Mouth_GRP/L_Lower
+        weight: 1
+      - path: Whistle_Root/Tube01/Tube02/Tube03/Tube04/Tube05/Tube06/Tube07/Tube08/Tube09/Whistle01/Mouth_GRP/L_Lower_Corner
+        weight: 1
+      - path: Whistle_Root/Tube01/Tube02/Tube03/Tube04/Tube05/Tube06/Tube07/Tube08/Tube09/Whistle01/Mouth_GRP/L_Upper
+        weight: 1
+      - path: Whistle_Root/Tube01/Tube02/Tube03/Tube04/Tube05/Tube06/Tube07/Tube08/Tube09/Whistle01/Mouth_GRP/L_Upper_Corner
+        weight: 1
+      - path: Whistle_Root/Tube01/Tube02/Tube03/Tube04/Tube05/Tube06/Tube07/Tube08/Tube09/Whistle01/Mouth_GRP/R_Corner
+        weight: 1
+      - path: Whistle_Root/Tube01/Tube02/Tube03/Tube04/Tube05/Tube06/Tube07/Tube08/Tube09/Whistle01/Mouth_GRP/R_Lower
+        weight: 1
+      - path: Whistle_Root/Tube01/Tube02/Tube03/Tube04/Tube05/Tube06/Tube07/Tube08/Tube09/Whistle01/Mouth_GRP/R_Lower_Corner
+        weight: 1
+      - path: Whistle_Root/Tube01/Tube02/Tube03/Tube04/Tube05/Tube06/Tube07/Tube08/Tube09/Whistle01/Mouth_GRP/R_Upper
+        weight: 1
+      - path: Whistle_Root/Tube01/Tube02/Tube03/Tube04/Tube05/Tube06/Tube07/Tube08/Tube09/Whistle01/Mouth_GRP/R_Upper_Corner
+        weight: 1
+      - path: Whistle_Root/Tube01/Tube02/Tube03/Tube04/Tube05/Tube06/Tube07/Tube08/Tube09/Whistle01/Whistle02
+        weight: 1
+      - path: Whistle_Root/Tube01/Tube02/Tube03/Tube04/Tube05/Tube06/Tube07/Tube08/Tube09/Whistle01/Whistle02/Whistle_BE
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
