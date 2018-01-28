@@ -11,20 +11,22 @@ public abstract class Interactable : MonoBehaviour
 	[SerializeField] protected float maxDistance;
 
 	[Header("IK settings")]
-	[SerializeField] Transform LHand;
-	[SerializeField] Transform RHand;
+	[SerializeField] protected Transform LHand;
+	[SerializeField] protected Transform RHand;
 
 	public int GetPoints { get { return points; } }
 
 	public bool scored = false;
 	public float lastVelocity;
-	Rigidbody rigidBody;
+	protected Rigidbody rigidBody;
+	protected bool held = false;
+	protected Transform holdingPlayer;
 
-	void Awake() {
+	protected virtual void Awake() {
 		rigidBody = GetComponent<Rigidbody>();
 	}
 
-	void LateUpdate()
+	protected virtual void LateUpdate()
 	{
 		lastVelocity = rigidBody.velocity.magnitude;
 	}
@@ -33,6 +35,9 @@ public abstract class Interactable : MonoBehaviour
 	// I.E., bomb starts fuse.
 	public virtual void OnPickup(Transform player)
 	{
+		held = true;
+		holdingPlayer = player;
+
 		// Create and setup new spring joint
 		SpringJoint springJoint = gameObject.AddComponent<SpringJoint>();
 		springJoint.autoConfigureConnectedAnchor = false;
@@ -47,11 +52,14 @@ public abstract class Interactable : MonoBehaviour
 		IKControl ik = player.GetComponentInChildren<IKControl>();
 		ik.leftHandObj = LHand;
 		ik.rightHandObj = RHand;
-		ik.ikActive = true;
+		ik.ikActive = true; 
 	}
 
 	public virtual void OnDrop(Transform player)
 	{
+		held = false;
+		holdingPlayer = null;
+
 		IKControl ik = player.GetComponentInChildren<IKControl>();	
 		ik.ikActive = false;
 		ik.leftHandObj = null;
@@ -62,6 +70,9 @@ public abstract class Interactable : MonoBehaviour
 
 	public virtual void OnThrow(Transform player)
 	{
+		held = false;
+		holdingPlayer = null;
+
 		OnDrop(transform);
 	}
 

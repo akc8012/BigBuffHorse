@@ -12,6 +12,7 @@ public class BoxTarget : MonoBehaviour
 			if (!box.scored)
 			{
 				scoreDisplay.AddScore(col.GetComponent<Interactable>().GetPoints);
+				box.scored = true;
 				box.Destroy();
 			}
 		}

@@ -113,7 +113,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: d8b3771e62691014ba009d52d202aaf7, type: 2}
+  - {fileID: 2100000, guid: 849d2a74f68e81444971744ab0105b6e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnables:
-  - {fileID: 1563668602776832, guid: a6f972987edab5d49a860436893622ca, type: 2}
+  - {fileID: 1791722119225734, guid: d46ab6afc7060a94ca0442971aa1003f, type: 2}
   - {fileID: 1239873934192880, guid: 716b20b8d41f1a64992da244502961fa, type: 2}
   minSpawnDelay: 2
   maxSpawnDelay: 4
