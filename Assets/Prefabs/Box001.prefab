@@ -187,6 +187,7 @@ MonoBehaviour:
   maxDistance: 0.6
   LHand: {fileID: 4907350006550492}
   RHand: {fileID: 4717058500043234}
+  lastVelocity: 0
 --- !u!114 &114935333664801906
 MonoBehaviour:
   m_ObjectHideFlags: 1

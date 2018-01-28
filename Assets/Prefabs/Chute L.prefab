@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4043422709841852}
   - component: {fileID: 33685210441667792}
   - component: {fileID: 23429854749903160}
-  - component: {fileID: 95595864268005230}
   m_Layer: 0
   m_Name: Chute L
   m_TagString: Untagged
@@ -140,23 +139,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1434825958266920}
   m_Mesh: {fileID: 4300000, guid: 24858a40068a4f143843a00767cc13d4, type: 3}
---- !u!95 &95595864268005230
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1434825958266920}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 24858a40068a4f143843a00767cc13d4, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114243222137030334
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -169,6 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnables:
-  - {fileID: 1974122783764496, guid: a8e6498cef7ac1c43bde87782632042d, type: 2}
+  - {fileID: 1563668602776832, guid: a6f972987edab5d49a860436893622ca, type: 2}
+  - {fileID: 1239873934192880, guid: 716b20b8d41f1a64992da244502961fa, type: 2}
   minSpawnDelay: 2
   maxSpawnDelay: 4
