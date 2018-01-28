@@ -1,67 +1,15 @@
 fileFormatVersion: 2
-guid: c356836b3de2c8b4b9ed324857a382c7
-timeCreated: 1517150305
+guid: 2cbf419d48d6e484c8e0eb50c5c8a980
+timeCreated: 1517153363
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
-    100002: drone_Arms
-    100004: drone_Base
-    100006: drone_Bottom
-    100008: drone_Camera
-    100010: drone_Eyes
-    100012: drone_Legs
-    100014: drone_Propeller_01
-    100016: drone_Propeller_02
-    100018: drone_Propeller_03
-    100020: drone_Propeller_04
-    100022: drone_Scoreboard
     400000: //RootNode
-    400002: drone_Arms
-    400004: drone_Base
-    400006: drone_Bottom
-    400008: drone_Camera
-    400010: drone_Eyes
-    400012: drone_Legs
-    400014: drone_Propeller_01
-    400016: drone_Propeller_02
-    400018: drone_Propeller_03
-    400020: drone_Propeller_04
-    400022: drone_Scoreboard
-    2300000: drone_Arms
-    2300002: drone_Base
-    2300004: drone_Bottom
-    2300006: drone_Camera
-    2300008: drone_Eyes
-    2300010: drone_Legs
-    2300012: drone_Propeller_01
-    2300014: drone_Propeller_02
-    2300016: drone_Propeller_03
-    2300018: drone_Propeller_04
-    2300020: drone_Scoreboard
-    3300000: drone_Arms
-    3300002: drone_Base
-    3300004: drone_Bottom
-    3300006: drone_Camera
-    3300008: drone_Eyes
-    3300010: drone_Legs
-    3300012: drone_Propeller_01
-    3300014: drone_Propeller_02
-    3300016: drone_Propeller_03
-    3300018: drone_Propeller_04
-    3300020: drone_Scoreboard
-    4300000: drone_Eyes
-    4300002: drone_Base
-    4300004: drone_Propeller_02
-    4300006: drone_Bottom
-    4300008: drone_Camera
-    4300010: drone_Propeller_01
-    4300012: drone_Legs
-    4300014: drone_Arms
-    4300016: drone_Scoreboard
-    4300018: drone_Propeller_03
-    4300020: drone_Propeller_04
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Letter
     9500000: //RootNode
   materials:
     importMaterials: 1
