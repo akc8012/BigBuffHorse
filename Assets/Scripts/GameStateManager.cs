@@ -15,6 +15,12 @@ public class GameStateManager : MonoBehaviour
 	[SerializeField] GameState gameState = GameState.Waiting;
 	public GameState GetState { get { return gameState; } }
 
+	public delegate void RoundAction();
+	public event RoundAction OnRoundStart;
+
+	public delegate void RoundActionEnd();
+	public event RoundActionEnd OnRoundEnd;
+
 	void Awake()
 	{
 		if (instance == null)
@@ -66,12 +72,18 @@ public class GameStateManager : MonoBehaviour
 		canvas.GetComponent<RoundCanvasUI>().ShowRoundWinner(ScoreManager.instance.GetWinnerString(ScoreManager.instance.GetGameWinner()));
 
 		gameState = GameState.Waiting;
+
+		if (OnRoundEnd != null)
+			OnRoundEnd();
 	}
 
 	public void RoundStart()
 	{
 		GameObject.Find("Countdown").GetComponent<Countdown>().StartTimer();
 		gameState = GameState.Playing;
+
+		if (OnRoundStart != null)
+			OnRoundStart();
 	}
 
 	public void RoundEnd()
@@ -82,6 +94,9 @@ public class GameStateManager : MonoBehaviour
 		StartCoroutine(WaitForEndRound(2.15f));
 
 		gameState = GameState.Waiting;
+
+		if (OnRoundEnd != null)
+			OnRoundEnd();
 	}
 
 	IEnumerator WaitForEndRound(float t)
