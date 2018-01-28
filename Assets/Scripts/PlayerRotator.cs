@@ -12,8 +12,6 @@ public class PlayerRotator : MonoBehaviour
 	protected Vector3 input;
 	protected Rigidbody rigidBody;
 
-	//Vector3 laggyInput;
-
 	[SerializeField] Animator animator;
 
 	void Awake() {
