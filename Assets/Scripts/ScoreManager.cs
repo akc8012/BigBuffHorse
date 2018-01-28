@@ -66,6 +66,18 @@ public class ScoreManager : MonoBehaviour
 			return WinState.P1;
 	}
 
+	public string GetCurrentWinnerString()
+	{
+		WinState winner = GetCurrentWinner();
+
+		if (winner == WinState.P0)
+			return "1";
+		else if (winner == WinState.P1)
+			return "2";
+		else
+			return "Tie";
+	}
+
 	public WinState GetGameWinner()
 	{
 		int p0Wins = 0, p1Wins = 0;

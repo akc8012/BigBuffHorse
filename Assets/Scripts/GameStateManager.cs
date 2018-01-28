@@ -12,7 +12,7 @@ public class GameStateManager : MonoBehaviour
 	[SerializeField] GameObject gameEndCanvas;
 	[SerializeField] bool startImmediately = false;
 
-	GameState gameState = GameState.Waiting;
+	[SerializeField] GameState gameState = GameState.Waiting;
 	public GameState GetState { get { return gameState; } }
 
 	void Awake()
@@ -39,7 +39,6 @@ public class GameStateManager : MonoBehaviour
 	{
 		ScoreManager.instance.ResetScore();
 		SceneManager.LoadScene(1);
-		gameState = GameState.Playing;
 
 		StartCoroutine(ShowRoundIndicator(3));
 	}
@@ -77,7 +76,9 @@ public class GameStateManager : MonoBehaviour
 
 	public void RoundEnd()
 	{
-		print(ScoreManager.instance.GetCurrentWinner());
+		RoundCanvasUI roundCanvasUI = GameObject.Find("RoundCanvas").GetComponent<RoundCanvasUI>();
+		roundCanvasUI.ShowRoundWinner(ScoreManager.instance.GetCurrentWinnerString());
+		
 		StartCoroutine(WaitForEndRound(3));
 
 		gameState = GameState.Waiting;
