@@ -9,7 +9,7 @@ public class Countdown : MonoBehaviour
 	[SerializeField]
 	bool running = true;
 	[SerializeField] int startTime = 120;
-	int timeLeft;
+	float timeLeft;
 	[SerializeField] Text text;
 
 	void Start()
@@ -26,7 +26,7 @@ public class Countdown : MonoBehaviour
 	{
 		while (running)
 		{
-			timeLeft--;
+			timeLeft -= 0.5f;
 			SetTime(timeLeft);
 
 			if (timeLeft <= 0)
@@ -42,7 +42,7 @@ public class Countdown : MonoBehaviour
 		SetTime(startTime);
 	}
 
-	public void SetTime(int value)
+	public void SetTime(float value)
 	{
 		TimeSpan time = TimeSpan.FromSeconds(value);
 		text.text = time.Minutes.ToString() + ":" + (time.Seconds < 10 ? "0" : "") + time.Seconds.ToString();
