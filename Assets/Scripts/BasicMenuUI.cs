@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BasicMenuUI : MonoBehaviour
 {
-	[SerializeField]
-	Button playAgainButt;
-	[SerializeField]
-	Button quitButt;
+	[SerializeField] Button playAgainButt;
+	[SerializeField] Button quitButt;
 
 	void Start()
 	{
@@ -16,7 +15,7 @@ public class BasicMenuUI : MonoBehaviour
 			playAgainButt.onClick.AddListener(RestartGameClicked);
 
 		if (quitButt != null)
-			quitButt.onClick.AddListener(GoToTitleClicked);
+			quitButt.onClick.AddListener(QuitClicked);
 	}
 
 	void RestartGameClicked()
@@ -24,9 +23,12 @@ public class BasicMenuUI : MonoBehaviour
 		GameStateManager.instance.RestartGame();
 	}
 
-	void GoToTitleClicked()
+	void QuitClicked()
 	{
-		GameStateManager.instance.GoToTitle();
+		if (SceneManager.GetActiveScene().buildIndex == 0)
+			Application.Quit();
+		else
+			GameStateManager.instance.GoToTitle();
 	}
 
 }

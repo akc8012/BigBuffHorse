@@ -62,9 +62,9 @@ public class GameStateManager : MonoBehaviour
 
 	public void GameEnd()
 	{
-		print("GAME WINNER: " + ScoreManager.instance.GetGameWinner());
+		GameObject canvas = Instantiate(gameEndCanvas);
+		canvas.GetComponent<RoundCanvasUI>().ShowRoundWinner(ScoreManager.instance.GetWinnerString(ScoreManager.instance.GetGameWinner()));
 
-		Instantiate(gameEndCanvas);
 		gameState = GameState.Waiting;
 	}
 
@@ -77,7 +77,7 @@ public class GameStateManager : MonoBehaviour
 	public void RoundEnd()
 	{
 		RoundCanvasUI roundCanvasUI = GameObject.Find("RoundCanvas").GetComponent<RoundCanvasUI>();
-		roundCanvasUI.ShowRoundWinner(ScoreManager.instance.GetCurrentWinnerString());
+		roundCanvasUI.ShowRoundWinner(ScoreManager.instance.GetWinnerString(ScoreManager.instance.GetCurrentWinner()));
 		
 		StartCoroutine(WaitForEndRound(3));
 
