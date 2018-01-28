@@ -2,7 +2,9 @@
 
 public class Chute : MonoBehaviour
 {
-	[SerializeField] GameObject[] spawnables;
+	[SerializeField] GameObject bombPrefab;
+	[SerializeField] GameObject boxPrefab;
+	[SerializeField] int bombChance = 20;
 	[SerializeField] float minSpawnDelay;
 	[SerializeField] float maxSpawnDelay;
 
@@ -29,8 +31,11 @@ public class Chute : MonoBehaviour
 
 	public void SpawnObject()
 	{
-		int randNum = Random.Range(0, spawnables.Length);
-		Instantiate(spawnables[randNum], spawnLoc.position, Quaternion.identity, boxContainer);
+		int randNum = Random.Range(0, 100);
+		if(randNum <= bombChance)
+			Instantiate(bombPrefab, spawnLoc.position, Quaternion.identity, boxContainer);
+		else
+			Instantiate(boxPrefab, spawnLoc.position, Quaternion.identity, boxContainer);
 	}
 
 	void SetNextSpawnTime()
