@@ -40,7 +40,7 @@ public class GameStateManager : MonoBehaviour
 		ScoreManager.instance.ResetScore();
 		SceneManager.LoadScene(1);
 
-		StartCoroutine(ShowRoundIndicator(3));
+		StartCoroutine(ShowRoundIndicator(2.15f));
 	}
 
 	IEnumerator ShowRoundIndicator(float t)
@@ -79,7 +79,7 @@ public class GameStateManager : MonoBehaviour
 		RoundCanvasUI roundCanvasUI = GameObject.Find("RoundCanvas").GetComponent<RoundCanvasUI>();
 		roundCanvasUI.ShowRoundWinner(ScoreManager.instance.GetWinnerString(ScoreManager.instance.GetCurrentWinner()));
 		
-		StartCoroutine(WaitForEndRound(3));
+		StartCoroutine(WaitForEndRound(2.15f));
 
 		gameState = GameState.Waiting;
 	}
